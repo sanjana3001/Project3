@@ -1,0 +1,59 @@
+﻿@model Project3.Models.TblOrderedLaptop
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sale Report Details</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class="col-sm-3">
+            <h4>Customer Details</h4>
+            Customer Id: @ViewBag.customer.Cid
+
+            Customer Name:@ViewBag.customer.Cname
+            <br />
+            Customer Contact:@ViewBag.customer.Ccontact
+            <br />
+            Customer Email:@ViewBag.customer.Cemail
+        </dt>
+       
+    <dt class="col-sm-3">
+
+        <h4>Laptop Details</h4>
+        LaptopId: @ViewBag.laptop.Lid
+        <br />
+        LaptopName: @ViewBag.laptop.Lname
+        <br />
+        Laptop Model:@ViewBag.laptop.Lmodel
+        <br />
+        Laptop Price:@ViewBag.laptop.Lprice
+        <br />
+    </dt>
+       
+    <dt class="col-sm-3">
+        <h4>Seller details</h4>
+        Seller Id: @ViewBag.seller.Sid
+
+        Seller Name:@ViewBag.seller.Sname
+        <br />
+        Seller Contact:@ViewBag.seller.Scontact
+        <br />
+        Seller Email:@ViewBag.seller.Semail
+        <hr />
+    </dt>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Oid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<hr />
+
+

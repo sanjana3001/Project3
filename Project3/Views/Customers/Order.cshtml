@@ -1,0 +1,44 @@
+﻿@model Project3.Models.TblOrderedLaptop
+
+@{
+    ViewData["Title"] = "Order";
+    int Oid = ViewBag.id;
+}
+
+<h1>Order</h1>
+
+<div>
+    <h4>TblOrderedLaptop</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Oid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Oid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer.Cid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.L)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.L.Lid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Seller)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Seller.Sid)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Oid">Edit</a> |*@
+    <a asp-controller="Customers" asp-action="Submit">Submit</a> 
+    <a asp-action="Index">Back to List</a>
+</div>

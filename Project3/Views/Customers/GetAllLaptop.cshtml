@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<Project3.Models.AvailableLaptop>
+
+<h1>
+    List of Laptops
+</h1>
+
+<table class="table table-bordered table-hover" >
+    <thead>
+        <tr>
+            <th>Laptop Id</th>
+            <th>Laptop Name</th>
+            <th>Laptop Model</th>
+            <th>Laptop Price</th>
+            <th>Seller Id</th>
+            <th>Book</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>@item.Lid</td>
+            <td>@item.Lname</td>
+            <td>@item.Lmodel</td>
+            <td>@item.Lprice</td>
+            <td>@item.SellerId</td>
+            <td><a asp-controller="Customers" asp-action="Orders" asp-route-id="@item.Lid">Order</a></td>
+            
+        </tr>
+
+
+        }
+
+
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model Project3.Models.TblSeller
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TblSeller</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Sid" class="control-label"></label>
+                <input asp-for="Sid" class="form-control" />
+                <span asp-validation-for="Sid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sname" class="control-label"></label>
+                <input asp-for="Sname" class="form-control" />
+                <span asp-validation-for="Sname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Spass" class="control-label"></label>
+                <input asp-for="Spass" class="form-control" />
+                <span asp-validation-for="Spass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Scontact" class="control-label"></label>
+                <input asp-for="Scontact" class="form-control" />
+                <span asp-validation-for="Scontact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Semail" class="control-label"></label>
+                <input asp-for="Semail" class="form-control" />
+                <span asp-validation-for="Semail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

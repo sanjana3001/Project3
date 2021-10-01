@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Project3.Models.AvailableLaptop>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lmodel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lprice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seller)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lmodel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lprice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seller.Sid)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Lid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Lid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Lid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<a asp-controller="Admin" asp-action="Dashboard"> Go to Dashboard</a>
